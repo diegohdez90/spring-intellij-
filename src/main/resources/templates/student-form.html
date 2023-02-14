@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+  <form action="#" th:action="@{/student/submit}" method="post" th:object="${student}">
+      <input th:field="*{firstName}" placeholder="Firstname">
+      <input th:field="*{lastName}" placeholder="Lastname">
+      <input type="submit" value="Submit your survey" />
+  </form>
+</body>
+</html>
