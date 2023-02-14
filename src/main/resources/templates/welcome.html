@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Welcome ${param.fullName}</title>
 </head>
 <body>
-  <h1>Home page</h1>
-
-  <a href="/survey">To survey</a>
+<h1 th:text="${fullName}"></h1>
 </body>
 </html>
