@@ -9,16 +9,7 @@
       <input th:field="*{firstName}" placeholder="Firstname">
       <input th:field="*{lastName}" placeholder="Lastname">
       <select th:field="*{country}">
-          <option th:value="US" th:text="'United States'"></option>
-          <option th:value="CA" th:text="Canada"></option>
-          <option th:value="MX" th:text="Mexico"></option>
-          <option th:value="AR" th:text="Argentina"></option>
-          <option th:value="ES" th:text="Spain"></option>
-          <option th:value="FR" th:text="France"></option>
-          <option th:value="BR" th:text="Brazil"></option>
-          <option th:value="DE" th:text="Germany"></option>
-          <option th:value="GB" th:text="'Great Bretain'"></option>
-          <option th:value="IT" th:text="Italy"></option>
+          <option th:each="country : ${student.getCountries()}" th:value="${country.value}" th:text="${country.key}"></option>
       </select>
       <input type="submit" value="Submit your survey" />
   </form>
