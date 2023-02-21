@@ -11,6 +11,23 @@
       <select th:field="*{country}">
           <option th:each="country : ${student.getCountries()}" th:value="${country.value}" th:text="${country.key}"></option>
       </select>
+      <h5>Favorite Language</h5>
+      <label>
+          Java
+          <input type="radio" name="language" value="Java" th:field="*{favoriteLanguage}">
+      </label>
+      <label>
+          Python
+          <input type="radio" name="language" value="Python" th:field="*{favoriteLanguage}">
+      </label>
+      <label>
+          JavaScript
+          <input type="radio" name="language" value="JavaScript" th:field="*{favoriteLanguage}">
+      </label>
+      <label>
+          Ruby
+          <input type="radio" name="language" value="Ruby" th:field="*{favoriteLanguage}">
+      </label>
       <input type="submit" value="Submit your survey" />
   </form>
 </body>
