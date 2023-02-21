@@ -7,5 +7,9 @@
 <body>
     <p>The student is confirmed <span th:text="${student.getFirstName()}"></span> <span th:text="${student.getLastName()}"></span> and you lives in <span th:text="${student.getCountry()}"></span></p>
     <p>Your preferred language is: <span th:text="${student.getFavoriteLanguage()}"></span></p>
+    <p>You selected the following Operating Systems</p>
+    <ul>
+        <li th:each="operatingSystemSelected : ${student.getOperatingSystems()}" th:text="${operatingSystemSelected}"></li>
+    </ul>
 </body>
 </html>

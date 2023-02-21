@@ -15,6 +15,23 @@
       <label>
           <input th:each="language : ${student.getLanguages()}" type="radio" name="language" th:value="${language.value}" th:text="${language.key}" th:field="*{favoriteLanguage}">
       </label>
+      <h5>Operating Systems</h5>
+      <label>
+          Windows
+          <input type="checkbox" name="operating-systems" value="Windows" th:field="*{operatingSystems}">
+      </label>
+      <label>
+          Linux
+          <input type="checkbox" name="operating-systems" value="Linux" th:field="*{operatingSystems}">
+      </label>
+      <label>
+          iOS
+          <input type="checkbox" name="operating-systems" value="iOS" th:field="*{operatingSystems}">
+      </label>
+      <label>
+          Android OS
+          <input type="checkbox" name="operating-systems" value="Android OS" th:field="*{operatingSystems}">
+      </label>
       <input type="submit" value="Submit your survey" />
   </form>
 </body>
