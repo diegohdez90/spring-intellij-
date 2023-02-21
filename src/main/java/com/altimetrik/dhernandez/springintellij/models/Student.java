@@ -8,6 +8,7 @@ public class Student {
     private String country;
     private LinkedHashMap<String, String> countries;
 
+    private LinkedHashMap<String, String> languages;
     private String favoriteLanguage;
 
     public Student() {
@@ -19,6 +20,11 @@ public class Student {
         countries.put("Spain", "SP");
         countries.put("Brazil", "BR");
         countries.put("Argentina", "AR");
+
+        this.languages = new LinkedHashMap<>();
+        languages.put("Java", "Java");
+        languages.put("Python", "Python");
+        languages.put("JavaScript", "JavaScript");
     }
 
     public Student(String firstName, String lastName) {
@@ -52,6 +58,10 @@ public class Student {
 
     public LinkedHashMap<String, String> getCountries() {
         return countries;
+    }
+
+    public LinkedHashMap<String, String> getLanguages() {
+        return languages;
     }
 
     public String getFavoriteLanguage() {
