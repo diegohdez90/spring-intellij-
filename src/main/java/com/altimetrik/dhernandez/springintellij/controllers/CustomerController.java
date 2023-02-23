@@ -24,6 +24,7 @@ public class CustomerController {
     @RequestMapping("/submit")
     public String submit(@Valid @ModelAttribute("customer") Customer customer,
                          BindingResult bindingResult) {
+        System.out.println(bindingResult);
         if (bindingResult.hasErrors()) {
             return "customer-form";
         }

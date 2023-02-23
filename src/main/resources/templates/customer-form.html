@@ -16,7 +16,7 @@
         </ul>
         <label>
             Number of free passes
-            <input type="number" th:field="*{freePasses}" th:class="${#fields.hasErrors('freePasses')}? error">
+            <input th:field="*{freePasses}" th:class="${#fields.hasErrors('freePasses')}? error">
             <ul>
                 <li th:each="error : ${#fields.errors('freePasses')}" th:text="${error}"></li>
             </ul>

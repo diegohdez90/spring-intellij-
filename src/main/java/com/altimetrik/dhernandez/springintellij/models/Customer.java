@@ -11,9 +11,13 @@ public class Customer {
     @Size(min = 1, message = "Please fill your last name with a least one character")
     private String lastName;
 
-    @NotNull(message = "You must provide the number of free passes")
-    @Min(value = 0, message = "Please, fill with a least a value of zero (0)")
-    @Max(value = 10, message = "You exceeded the amount of free passes. The maximum amount is ten (10)")
+//    @NotNull(message = "You must provide the number of free passes")
+//    @Min(value = 0, message = "Please, fill with a least a value of zero (0)")
+//    @Max(value = 10, message = "You exceeded the amount of free passes. The maximum amount is ten (10)")
+
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 10)
     private Integer freePasses;
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Only 5 characters/digits")
