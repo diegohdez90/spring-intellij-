@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Confirmation</title>
+</head>
+<body>
+  <h1>Customer information</h1>
+  <p>The customer is confirmed:</p>
+  <ul>
+      <li>First name: <span th:text="${customer.getFirstName()}"></span></li>
+      <li>Last name: <span th:text="${customer.getLastName()}"></span></li>
+  </ul>
+</body>
+</html>
