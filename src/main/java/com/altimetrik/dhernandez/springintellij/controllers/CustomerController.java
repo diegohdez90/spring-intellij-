@@ -27,8 +27,6 @@ public class CustomerController {
         if (bindingResult.hasErrors()) {
             return "customer-form";
         }
-        System.out.println(customer.getFirstName());
-        System.out.println(customer.getLastName());
         return "customer-confirmation";
     }
 
