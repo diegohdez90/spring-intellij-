@@ -1,10 +1,7 @@
 package com.altimetrik.dhernandez.springintellij.models;
 
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 public class Customer {
     @NotNull(message = "First name is required")
@@ -17,6 +14,9 @@ public class Customer {
     @Min(value = 0, message = "Please, fill with a least a value of zero (0)")
     @Max(value = 10, message = "You exceeded the amount of free passes. The maximum amount is ten (10)")
     private int freePasses;
+
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Only 5 characters/digits")
+    private String postalCode;
 
     public Customer() {
     }
@@ -43,5 +43,13 @@ public class Customer {
 
     public void setFreePasses(int freePasses) {
         this.freePasses = freePasses;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 }
