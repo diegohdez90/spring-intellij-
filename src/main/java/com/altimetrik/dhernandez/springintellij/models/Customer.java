@@ -1,6 +1,7 @@
 package com.altimetrik.dhernandez.springintellij.models;
 
 
+import com.altimetrik.dhernandez.springintellij.annotations.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -11,10 +12,6 @@ public class Customer {
     @Size(min = 1, message = "Please fill your last name with a least one character")
     private String lastName;
 
-//    @NotNull(message = "You must provide the number of free passes")
-//    @Min(value = 0, message = "Please, fill with a least a value of zero (0)")
-//    @Max(value = 10, message = "You exceeded the amount of free passes. The maximum amount is ten (10)")
-
     @NotNull
     @Min(value = 0)
     @Max(value = 10)
@@ -22,6 +19,9 @@ public class Customer {
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Only 5 characters/digits")
     private String postalCode;
+
+    @CourseCode
+    private String courseCode;
 
     public Customer() {
     }
@@ -56,5 +56,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }

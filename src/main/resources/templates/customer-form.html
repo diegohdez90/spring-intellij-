@@ -25,6 +25,11 @@
         <ul>
             <li th:each="error : ${#fields.errors('postalCode')}" th:text="${error}"></li>
         </ul>
+
+        <input th:field="*{courseCode}" placeholder="Course Code" th:class="${#fields.hasErrors('courseCode')}? error">
+        <ul>
+            <li th:each="error : ${#fields.errors('courseCode')}" th:text="${error}"></li>
+        </ul>
         <input type="submit" value="Submit your data">
     </form>
 </body>
