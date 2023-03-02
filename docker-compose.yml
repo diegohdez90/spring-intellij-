@@ -1,0 +1,15 @@
+version: "3"
+services:
+  MySQLContainer:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecpassword90
+      - MYSQL_USER=hbstudent
+      - MYSQL_PASSWORD=hbstudent
+      - MYSQL_DATABASE=hb_student_tracker
+  mysql-container:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - MySQLContainer
