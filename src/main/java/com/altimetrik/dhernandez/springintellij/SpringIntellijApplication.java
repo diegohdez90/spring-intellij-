@@ -22,33 +22,33 @@ public class SpringIntellijApplication {
         SpringApplication.run(SpringIntellijApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner demo(PupilRepository repository) {
-        return (args) -> {
-            // save a couple of persons
-            repository.save(new Pupil("Jack", "Smith", "jsmith@mail.com"));
-            repository.save(new Pupil("Joe", "Black", "jblack@mail.com"));
-            repository.save(new Pupil("Martin", "Bauer", "mbauer@mail.com"));
-
-
-            // fetch all persons
-            log.info("Persons found with findAll():");
-            log.info("-------------------------------");
-            for (Pupil pupil : repository.findAll()) {
-                log.info(pupil.toString());
-            }
-            log.info("");
-
-            // fetch an individual person by ID
-
-            // fetch persons by last name
-            log.info("Person found by id");
-            log.info("--------------------------------------------");
-            Optional<Pupil> pupil = repository.findById(1);
-
-            log.info(pupil.toString());
-
-            log.info("");
-        };
-    }
+//    @Bean
+//    public CommandLineRunner demo(PupilRepository repository) {
+//        return (args) -> {
+//            // save a couple of persons
+//            repository.save(new Pupil("Jack", "Smith", "jsmith@mail.com"));
+//            repository.save(new Pupil("Joe", "Black", "jblack@mail.com"));
+//            repository.save(new Pupil("Martin", "Bauer", "mbauer@mail.com"));
+//
+//
+//            // fetch all persons
+//            log.info("Persons found with findAll():");
+//            log.info("-------------------------------");
+//            for (Pupil pupil : repository.findAll()) {
+//                log.info(pupil.toString());
+//            }
+//            log.info("");
+//
+//            // fetch an individual person by ID
+//
+//            // fetch persons by last name
+//            log.info("Person found by id");
+//            log.info("--------------------------------------------");
+//            Optional<Pupil> pupil = repository.findById(1);
+//
+//            log.info(pupil.toString());
+//
+//            log.info("");
+//        };
+//    }
 }
