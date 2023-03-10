@@ -81,4 +81,17 @@ public class PupilController {
         service.save(student);
         return "redirect:/v1/list-formatted";
     }
+
+    @GetMapping("/deleteForm/{id}")
+    public String deleteForm(Model model, @PathVariable Integer id) {
+        Pupil pupil = service.getById(id).get();
+        model.addAttribute("student", pupil);
+        return "delete-student";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        service.deleteById(id);
+        return "redirect:/v1/list-formatted";
+    }
 }

@@ -31,7 +31,8 @@
                             <td th:text="${student.getLastName()}"></td>
                             <td th:text="${student.getEmail()}"></td>
                             <td>
-                                <a th:href="@{'updateForm/' + ${student.getId()}}">Update</a>
+                                <a class="btn btn-light" th:href="@{'updateForm/' + ${student.getId()}}">Update</a>
+                                <a class="btn btn-light" th:href="@{'deleteForm/' + ${student.getId()}}">Delete</a>
                             </td>
                         </tr>
                         </tbody>
