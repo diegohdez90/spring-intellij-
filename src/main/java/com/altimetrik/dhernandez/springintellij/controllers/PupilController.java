@@ -3,6 +3,7 @@ package com.altimetrik.dhernandez.springintellij.controllers;
 import com.altimetrik.dhernandez.springintellij.SpringIntellijApplication;
 import com.altimetrik.dhernandez.springintellij.models.Pupil;
 import com.altimetrik.dhernandez.springintellij.services.PupilService;
+import org.hibernate.annotations.Parameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/v1")
@@ -60,5 +62,13 @@ public class PupilController {
     public String submit(@ModelAttribute("pupil") Pupil pupil) {
         service.save(pupil);
         return "redirect:/v1/list-formatted";
+    }
+
+    @GetMapping("/updateForm/{id}")
+    public String updateForm(Model model, @PathVariable Integer id) {
+        log.info("You are updating " + id);
+        Pupil pupil = service.getById(id).get();
+        model.addAttribute("student", pupil);
+        return "update-student-form";
     }
 }

@@ -1,12 +1,13 @@
 package com.altimetrik.dhernandez.springintellij.services;
 
-import com.altimetrik.dhernandez.springintellij.SpringIntellijApplication;
 import com.altimetrik.dhernandez.springintellij.models.Pupil;
 import com.altimetrik.dhernandez.springintellij.repositories.PupilRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class PupilService {
@@ -22,6 +23,10 @@ public class PupilService {
 
     public Iterable<Pupil> getAll() {
         return repository.findAll();
+    }
+
+    public Optional<Pupil> getById(Integer id) {
+       return repository.findById(id);
     }
 
 }
