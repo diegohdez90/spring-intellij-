@@ -71,4 +71,14 @@ public class PupilController {
         model.addAttribute("student", pupil);
         return "update-student-form";
     }
+
+    @PostMapping("/update/{id}")
+    public String submit(@ModelAttribute("pupil") Pupil pupil, @PathVariable Integer id) {
+        Pupil student = service.getById(id).get();
+        student.setFirstName(pupil.getFirstName());
+        student.setLastName(pupil.getLastName());
+        student.setEmail(pupil.getEmail());
+        service.save(student);
+        return "redirect:/v1/list-formatted";
+    }
 }
