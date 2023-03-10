@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping(path = "/v1")
 public class PupilController {
 
-    private static final Logger log = LoggerFactory.getLogger(SpringIntellijApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(PupilController.class);
 
     @Autowired
     private PupilService service;
@@ -47,6 +47,18 @@ public class PupilController {
         log.info("You have retrieved");
         model.addAttribute("students", students);
         return "student-list";
+    }
 
+    @GetMapping("/form")
+    public String form(Model model) {
+        Pupil pupil = new Pupil();
+        model.addAttribute("student", pupil);
+        return "pupil-form";
+    }
+
+    @PostMapping("/submit")
+    public String submit(@ModelAttribute("pupil") Pupil pupil) {
+        service.save(pupil);
+        return "redirect:/v1/list-formatted";
     }
 }
