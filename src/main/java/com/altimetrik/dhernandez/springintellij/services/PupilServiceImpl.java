@@ -2,17 +2,19 @@ package com.altimetrik.dhernandez.springintellij.services;
 
 import com.altimetrik.dhernandez.springintellij.models.Pupil;
 import com.altimetrik.dhernandez.springintellij.repositories.PupilRepository;
+import com.altimetrik.dhernandez.springintellij.services.interfaces.PupilService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PupilService {
+public class PupilServiceImpl implements PupilService {
 
-    private static final Logger log = LoggerFactory.getLogger(PupilService.class);
+    private static final Logger log = LoggerFactory.getLogger(PupilServiceImpl.class);
 
     @Autowired
     PupilRepository repository;
@@ -33,4 +35,9 @@ public class PupilService {
         repository.deleteById(id);
     }
 
+
+    @Override
+    public List<Pupil> searchByFirstName(String firstName) {
+        return repository.findByFirstName(firstName);
+    }
 }
