@@ -1,15 +1,21 @@
 package com.altimetrik.dhernandez.springintellij.common;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
-public class FootballlCoach implements Coach{
+@Lazy
+public class FootballlCoach implements Coach {
+    private static final Logger log = LoggerFactory.getLogger(FootballlCoach.class);
     private String emailAddress;
     private String team;
 
-    public FootballlCoach() {}
+    public FootballlCoach() {
+        log.info(getClass().getName() + "::Constructor footballCoach");
+    }
 
     public String getEmailAddress() {
         return this.emailAddress;
