@@ -13,4 +13,10 @@ public interface PupilRepository extends CrudRepository<Pupil, Integer>{
 
     @Query(value = "SELECT * FROM student s WHERE s.first_name=:firstName", nativeQuery = true)
     List<Pupil> findByFirstName(@Param("firstName") String firstName);
+
+    @Query(value = "SELECT * FROM student s ORDER BY s.first_name", nativeQuery = true)
+    List<Pupil> sortByFirstName();
+
+    @Query(value = "SELECT * FROM student s ORDER BY s.first_name DESC", nativeQuery = true)
+    List<Pupil> sortByFirstNameDesc();
 }

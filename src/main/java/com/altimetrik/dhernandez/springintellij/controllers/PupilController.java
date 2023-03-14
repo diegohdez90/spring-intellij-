@@ -64,7 +64,7 @@ public class PupilController {
     @GetMapping("/updateForm/{id}")
     public String updateForm(Model model, @PathVariable Integer id) {
         log.info("You are updating " + id);
-        Pupil pupil = service.getById(id).get();
+        Pupil pupil = service.getById(id).orElseThrow();
         model.addAttribute("student", pupil);
         return "update-student-form";
     }

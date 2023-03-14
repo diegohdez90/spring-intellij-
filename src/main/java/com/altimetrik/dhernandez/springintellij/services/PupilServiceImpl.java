@@ -1,5 +1,6 @@
 package com.altimetrik.dhernandez.springintellij.services;
 
+import com.altimetrik.dhernandez.springintellij.annotations.MyAnnotation;
 import com.altimetrik.dhernandez.springintellij.models.Pupil;
 import com.altimetrik.dhernandez.springintellij.repositories.PupilRepository;
 import com.altimetrik.dhernandez.springintellij.services.interfaces.PupilService;
@@ -27,6 +28,7 @@ public class PupilServiceImpl implements PupilService {
         return repository.findAll();
     }
 
+    @MyAnnotation
     public Optional<Pupil> getById(Integer id) {
        return repository.findById(id);
     }
