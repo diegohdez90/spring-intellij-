@@ -1,8 +1,10 @@
 package com.altimetrik.dhernandez.springintellij.common;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class FootballlCoach implements Coach{
     private String emailAddress;
     private String team;
