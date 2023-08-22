@@ -8,8 +8,8 @@ services:
       - "3306"
     environment:
       - MYSQL_ROOT_PASSWORD=mysecpassword90
-      #- MYSQL_USER=hbstudent
-      #- MYSQL_PASSWORD=hbstudent
+      - MYSQL_USER=hbstudent
+      - MYSQL_PASSWORD=hbstudent
       - MYSQL_DATABASE=hb_student_tracker
     volumes:
       - my-spring-boot-vol-sql:/var/lib/mysql
