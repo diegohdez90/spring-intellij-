@@ -19,7 +19,7 @@ public class SpringIntellijApplication {
     private static final Logger log = LoggerFactory.getLogger(SpringIntellijApplication.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringIntellijApplication.class, args);
+         SpringApplication.run(SpringIntellijApplication.class, args);
     }
 
 //    @Bean
